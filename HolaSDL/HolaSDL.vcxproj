@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}</ProjectGuid>
+    <RootNamespace>HolaSDL</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\ProyectosSDL.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\ProyectosSDL.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)SDL2_net-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)SDL2_net-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2_net.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="messages.h~" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BallObserver.h" />
+    <ClInclude Include="BounceOnBorders.h" />
+    <ClInclude Include="ComponentSwitcher.h" />
+    <ClInclude Include="Font.h" />
+    <ClInclude Include="GameComponent.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameStateObserver.h" />
+    <ClInclude Include="ImageRendered.h" />
+    <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="messages.h" />
+    <ClInclude Include="Music.h" />
+    <ClInclude Include="PaddleAIPhysics.h" />
+    <ClInclude Include="PaddleKeyboardInputComp.h" />
+    <ClInclude Include="PaddleMouseInputComp.h" />
+    <ClInclude Include="PhysicsComponent.h" />
+    <ClInclude Include="PingPong.h" />
+    <ClInclude Include="PingPongPhysics.h" />
+    <ClInclude Include="RectRender.h" />
+    <ClInclude Include="RenderComponent.h" />
+    <ClInclude Include="SDLGame.h" />
+    <ClInclude Include="SDLNetConnection.h" />
+    <ClInclude Include="SDLNetServer.h" />
+    <ClInclude Include="SDLResources.h" />
+    <ClInclude Include="SimpleMovePhysics.h" />
+    <ClInclude Include="SoundEffect.h" />
+    <ClInclude Include="StopOnBordersPhysics.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TimedObstacle.h" />
+    <ClInclude Include="TimedObstacleObserver.h" />
+    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="VirtualClock.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BallObserver.cpp" />
+    <ClCompile Include="BounceOnBorders.cpp" />
+    <ClCompile Include="ComponentSwitcher.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="GameComponent.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameStateObserver.cpp" />
+    <ClCompile Include="ImageRendered.cpp" />
+    <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Music.cpp" />
+    <ClCompile Include="PaddleAIPhysics.cpp" />
+    <ClCompile Include="PaddleKeyboardInputComp.cpp" />
+    <ClCompile Include="PaddleMouseInputComp.cpp" />
+    <ClCompile Include="PhysicsComponent.cpp" />
+    <ClCompile Include="PingPong.cpp" />
+    <ClCompile Include="PingPongPhysics.cpp" />
+    <ClCompile Include="RectRender.cpp" />
+    <ClCompile Include="RenderComponent.cpp" />
+    <ClCompile Include="SDLGame.cpp" />
+    <ClCompile Include="SDLNetConnection.cpp" />
+    <ClCompile Include="SDLNetServer.cpp" />
+    <ClCompile Include="SDLResources.cpp" />
+    <ClCompile Include="SimpleMovePhysics.cpp" />
+    <ClCompile Include="SoundEffect.cpp" />
+    <ClCompile Include="StopOnBordersPhysics.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TimedObstacle.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="VirtualClock.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
